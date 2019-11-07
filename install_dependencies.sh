@@ -22,11 +22,3 @@ apt-get update --yes
 apt-get install apt-transport-https --yes
 apt-get update --yes
 apt-get install dotnet-sdk-3.0 --yes
-
-#Add VM to Azure DevOps
-mkdir myagent && cd myagent
-wget https://vstsagentpackage.azureedge.net/agent/2.160.0/vsts-agent-linux-x64-2.160.0.tar.gz
-tar zxvf vsts-agent-linux-x64-2.160.0.tar.gz
-./config.sh --url https://dev.azure.com/foodtruckinc/ --auth pat --token $1 --unattended --pool $2 --agent $3 --acceptTeeEula OB
-sudo ./svc.sh install
-sudo ./svc.sh start
