@@ -22,3 +22,11 @@ apt-get update --yes
 apt-get install apt-transport-https --yes
 apt-get update --yes
 apt-get install dotnet-sdk-3.0 --yes
+
+#Install SQL package tool
+mkdir ~/sqlpackage
+wget https://download.microsoft.com/download/6/c/9/6c97d52e-bf4d-40e8-b95b-0782c41cd787/sqlpackage-linux-x64-ru-RU-15.0.4573.2.zip
+unzip sqlpackage-linux-x64-ru-RU-15.0.4573.2.zip -d ~/sqlpackage
+echo "export PATH=\"\$PATH:$HOME/sqlpackage\"" >> ~/.bashrc
+chmod a+x ~/sqlpackage/sqlpackage
+source ~/.bashrc
